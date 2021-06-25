@@ -134,6 +134,13 @@
             <version>5.0.2</version>
           </dependency>
         </dependencies>
+	      <dependency>
+      <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.7.0.1746</version>
+    <type>pom</type>
+    </dependency>
+	</dependencies>
 
       </plugin>
 	     
@@ -169,6 +176,27 @@
     </plugins>
    
   </build>
+<profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url> http://3.142.248.36:9000  </sonar.host.url>
+	
+ 
+	
+ <!--  <sonar.jdbc.url>your database URL</sonar.jdbc.url>
+<sonar.jdbc.driver>Your database driver</sonar.jdbc.driver>
+<sonar.jdbc.username>DB username</sonar.jdbc.username>
+<sonar.jdbc.password>db password</sonar.jdbc.password>        -->                 
+
+            </properties>
+        </profile>
+      </profiles>
+
 
 
 
